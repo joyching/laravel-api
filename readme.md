@@ -1,7 +1,11 @@
 # Laravel API
 
-[![StyleCI](https://github.styleci.io/repos/214119657/shield?branch=master)](https://github.styleci.io/repos/214119657)
+[![StyleCI](https://github.styleci.io/repos/239268455/shield?branch=master)](https://github.styleci.io/repos/239268455)
 <a href="https://travis-ci.org/joyching/laravel-api"><img src="https://api.travis-ci.org/repos/joyching/laravel-api.svg" alt="Build Status"></a>
+
+## API Document
+
+[https://joyching.github.io/apidoc/](https://joyching.github.io/apidoc/)
 
 ## Develop with Docker
 
@@ -14,7 +18,7 @@ To be able to run blog you have to meet the following requirements:
 
 1. Clone repository
 ```
-$ git clone git@github.com:joyching/bllaravel-apiog.git
+$ git clone git@github.com:joyching/laravel-api.git
 ```
 
 2. Copy `.env.example` to `.env` and modify according to your environment (make sure database host set to `DB_HOST=mysql`)
