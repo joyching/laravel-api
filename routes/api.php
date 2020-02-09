@@ -19,5 +19,8 @@ Route::prefix('v1')->group(function () {
 
     Route::middleware(['auth:api', 'auth.jwtVerify'])->group(function () {
         Route::get('logout', 'Auth\AuthenticationController@logout');
+
+        Route::get('me', 'UserController@show');
+        Route::put('me', 'UserController@update');
     });
 });
