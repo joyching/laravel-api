@@ -10,7 +10,7 @@ class RegisterControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
 
@@ -44,8 +44,6 @@ class RegisterControllerTest extends TestCase
             'email' => 'test@example.com',
             'name' => 'test',
         ]);
-
-        Event::assertDispatched(Authenticated::class);
     }
 
     /**
@@ -82,7 +80,7 @@ class RegisterControllerTest extends TestCase
      *
      * @return void
      */
-    public function testInvalidPasswordString()
+    public function testInvalidPasswordLength()
     {
         $credential = [
             'name' => 'test',
@@ -98,7 +96,7 @@ class RegisterControllerTest extends TestCase
                             'errors' => [
                                 [
                                     'field' => 'password',
-                                    'description' => 'The password format is invalid.',
+                                    'description' => 'The password must be at least 8 characters.',
                                 ]
                             ]
                         ]);

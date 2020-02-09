@@ -9,7 +9,7 @@ class PassportTestCase extends TestCase
 {
     protected $authenticateUser;
 
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
 

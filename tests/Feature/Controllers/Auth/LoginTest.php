@@ -10,7 +10,7 @@ class LoginTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp()
+    protected function setUp() : void
     {
         parent::setUp();
 
@@ -49,7 +49,7 @@ class LoginTest extends TestCase
     {
         $credential = [
             'email' => 'test@example.com',
-            'password' => 'secret',
+            'password' => 'secret123',
         ];
 
         $this->json('POST', '/v1/login', $credential)
