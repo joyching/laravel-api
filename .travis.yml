@@ -1,0 +1,29 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.3
+
+services:
+  - mysql
+
+addons:
+  apt:
+    sources:
+      - mysql-5.7-xenial
+    packages:
+      - mysql-server
+
+env:
+  - DB_HOST=127.0.0.1 DB_USERNAME=travis DB_PASSWORD=
+
+before_install:
+  - mysql -e 'CREATE DATABASE laravel;'
+
+before_script:
+  - composer install
+  - composer run-script post-root-package-install
+  - composer run-script post-create-project-cmd
+
+script: vendor/bin/phpunit --verbose
